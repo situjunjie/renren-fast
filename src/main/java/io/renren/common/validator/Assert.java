@@ -29,4 +29,10 @@ public abstract class Assert {
             throw new RRException(message);
         }
     }
+
+    public static void isTrue(Boolean flag ,String message){
+        if(flag == true){
+            throw  new RRException(message);
+        }
+    }
 }
