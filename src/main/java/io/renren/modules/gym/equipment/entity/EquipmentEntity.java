@@ -52,6 +52,6 @@ public class EquipmentEntity implements Serializable {
 
 	private Integer maintainFreq;
 
-	private String fix;
+	private Integer fix;
 
 }
