@@ -1,9 +1,11 @@
 package io.renren.modules.ipcs.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import io.renren.common.dto.TreeNodeDTO;
 import io.renren.common.utils.PageUtils;
 import io.renren.modules.ipcs.entity.IsolationRecordEntity;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,5 +18,6 @@ import java.util.Map;
 public interface IsolationRecordService extends IService<IsolationRecordEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
 }
 

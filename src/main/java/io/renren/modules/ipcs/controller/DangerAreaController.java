@@ -1,8 +1,10 @@
 package io.renren.modules.ipcs.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
+import io.renren.common.dto.TreeNodeDTO;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -85,6 +87,19 @@ public class DangerAreaController {
 		dangerAreaService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
+    }
+
+    /**
+     * 获取风险登记区域树
+     * @param params
+     * @return
+     */
+    @RequestMapping("/listTree")
+    @RequiresPermissions("ipcs:dangerarea:list")
+    public R listTree(@RequestParam Map<String, Object> params){
+        PageUtils page = dangerAreaService.queryPage(params);
+        List<TreeNodeDTO> tree = dangerAreaService.listTree(params);
+        return R.ok().put("page", page);
     }
 
 }
