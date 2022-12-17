@@ -9,7 +9,7 @@ import lombok.Data;
 
 /**
  * 区域表
- * 
+ *
  * @author java
  * @email java
  * @date 2022-12-10 20:31:42
@@ -36,5 +36,10 @@ public class AreaEntity implements Serializable {
 	 * 层级
 	 */
 	private Integer level;
+
+	/**
+	 * 风险等级 0 无风险 1：低风险  2：中风险  3：高风险
+	 */
+	private Integer dangerLevel;
 
 }

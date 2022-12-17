@@ -13,6 +13,8 @@ import java.util.List;
 @Data
 public class TreeNodeDTO {
 
+    private Long id;
+
     private String label;
 
     private List<TreeNodeDTO> childrens;
@@ -20,4 +22,6 @@ public class TreeNodeDTO {
     private Boolean disabled;
 
     private Boolean isLeaf;
+
+    private Integer dangerLevel;
 }

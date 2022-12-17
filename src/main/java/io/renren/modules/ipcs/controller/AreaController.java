@@ -1,8 +1,10 @@
 package io.renren.modules.ipcs.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
+import io.renren.common.dto.TreeNodeDTO;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -37,9 +39,9 @@ public class AreaController {
     @RequestMapping("/list")
     @RequiresPermissions("ipcs:area:list")
     public R list(@RequestParam Map<String, Object> params){
-        PageUtils page = areaService.queryPage(params);
+        List<TreeNodeDTO> treeNodeDTOS = areaService.listTree(params);
 
-        return R.ok().put("page", page);
+        return R.ok().put("data", treeNodeDTOS);
     }
 
 
@@ -86,5 +88,15 @@ public class AreaController {
 
         return R.ok();
     }
+
+    @RequestMapping("/updateDangerLevel")
+    @RequiresPermissions("ipcs:area:updateDangerLevel")
+    public R updateDangerLevel(@RequestBody Map<String,Object> params){
+        areaService.updateDangerLevel(params);
+        return R.ok();
+    }
+
+
+
 
 }

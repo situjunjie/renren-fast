@@ -1,9 +1,11 @@
 package io.renren.modules.ipcs.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import io.renren.common.dto.TreeNodeDTO;
 import io.renren.common.utils.PageUtils;
 import io.renren.modules.ipcs.entity.AreaEntity;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,5 +18,9 @@ import java.util.Map;
 public interface AreaService extends IService<AreaEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+    List<TreeNodeDTO> listTree(Map<String, Object> params);
+
+    void updateDangerLevel(Map<String, Object> params);
 }
 
