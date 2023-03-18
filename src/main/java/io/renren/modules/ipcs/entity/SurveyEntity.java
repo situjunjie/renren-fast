@@ -9,7 +9,7 @@ import lombok.Data;
 
 /**
  * 流调记录
- * 
+ *
  * @author java
  * @email java
  * @date 2022-12-10 20:31:42
@@ -64,5 +64,10 @@ public class SurveyEntity implements Serializable {
 	 * 是否有与次密接、密接患者有时空接触
 	 */
 	private String content3;
+
+	private String mobile;
+
+	private String acid;
+
 
 }

@@ -3,13 +3,10 @@ package io.renren.modules.ipcs.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import oracle.jdbc.proxy.annotation.Post;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import io.renren.modules.ipcs.entity.SurveyEntity;
 import io.renren.modules.ipcs.service.SurveyService;
@@ -84,6 +81,12 @@ public class SurveyController {
     public R delete(@RequestBody Long[] ids){
 		surveyService.removeByIds(Arrays.asList(ids));
 
+        return R.ok();
+    }
+
+    @PostMapping("/remindAcid")
+    public R remindAcid(@RequestBody Long id){
+        surveyService.remindAcid(id);
         return R.ok();
     }
 

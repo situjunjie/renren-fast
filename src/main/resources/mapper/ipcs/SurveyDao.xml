@@ -16,6 +16,8 @@
         <result property="content1" column="content1"/>
         <result property="content2" column="content2"/>
         <result property="content3" column="content3"/>
+        <result property="mobile" column="mobile" />
+        <result property="acid" column="acid" />
     </resultMap>
 
 

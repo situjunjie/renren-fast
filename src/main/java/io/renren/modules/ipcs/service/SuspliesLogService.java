@@ -2,21 +2,19 @@ package io.renren.modules.ipcs.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import io.renren.common.utils.PageUtils;
-import io.renren.modules.ipcs.entity.SurveyEntity;
+import io.renren.modules.ipcs.entity.SuspliesLogEntity;
 
 import java.util.Map;
 
 /**
- * 流调记录
+ * 入出库记录
  *
- * @author java
- * @email java
- * @date 2022-12-10 20:31:42
+ * @author 
+ * @email 
+ * @date 2023-03-01 13:49:05
  */
-public interface SurveyService extends IService<SurveyEntity> {
+public interface SuspliesLogService extends IService<SuspliesLogEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
-
-    void remindAcid(Long id);
 }
 

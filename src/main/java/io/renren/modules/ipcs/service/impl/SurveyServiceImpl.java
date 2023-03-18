@@ -2,6 +2,7 @@ package io.renren.modules.ipcs.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import io.renren.util.SmsUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 import java.util.Map;
@@ -30,6 +31,13 @@ public class SurveyServiceImpl extends ServiceImpl<SurveyDao, SurveyEntity> impl
         );
 
         return new PageUtils(page);
+    }
+
+    @Override
+    public void remindAcid(Long id) {
+        SurveyEntity surveyEntity = this.getById(id);
+        SmsUtils.send("去做核酸",surveyEntity.getMobile());
+
     }
 
 }

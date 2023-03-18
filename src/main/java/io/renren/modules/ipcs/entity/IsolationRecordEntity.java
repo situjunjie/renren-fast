@@ -9,7 +9,7 @@ import lombok.Data;
 
 /**
  * 隔离记录
- * 
+ *
  * @author java
  * @email java
  * @date 2022-12-10 20:31:42
@@ -56,5 +56,10 @@ public class IsolationRecordEntity implements Serializable {
 	 * 结束时间
 	 */
 	private Date endTime;
+
+	/**
+	 * 联系电话
+	 */
+	private String mobile;
 
 }

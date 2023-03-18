@@ -14,6 +14,7 @@
         <result property="time" column="time"/>
         <result property="beginTime" column="begin_time"/>
         <result property="endTime" column="end_time"/>
+        <result property="mobile" column="mobile" />
     </resultMap>
 
 
