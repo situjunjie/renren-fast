@@ -14,6 +14,7 @@
         <result property="cleanDate" column="clean_date"/>
         <result property="maintainFreq" column="maintain_date"/>
         <result property="fix" column="fix"/>
+        <result property="available" column="available"/>
     </resultMap>
 
 

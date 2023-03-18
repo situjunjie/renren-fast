@@ -1,6 +1,7 @@
 package io.renren.modules.gym.member.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import io.renren.modules.gym.member.controller.req.BuyCardRequestDTO;
@@ -93,6 +94,12 @@ public class MemberController {
     public R buyCard(@RequestBody BuyCardRequestDTO buyCardRequestDTO){
         memberService.buyCard(buyCardRequestDTO);
         return R.ok();
+    }
+
+    @RequestMapping("/listAll")
+    public R listAll(){
+        List<MemberEntity> list = memberService.list();
+        return R.ok().data(list);
     }
 
 }
